@@ -18,22 +18,22 @@ watchEffect(() => {
 <template>
   <main>
     <!-- Heading -->
-    <header>
-      <img src="./assets/vuejs-icon.svg" alt="pinia-logo"/>
-      <!-- <h1>Pinia Tasks</h1> -->
-      <h1>{{ name }}</h1>
-    </header>
+<!--    <header>-->
+    <!--      <img src="./assets/vuejs-icon.svg" alt="pinia-logo"/>-->
+    <!--      &lt;!&ndash; <h1>Pinia Tasks</h1> &ndash;&gt;-->
+    <!--      <h1>{{ name }}</h1>-->
+    <!--    </header>-->
 
     <!-- Add task form  -->
     <div class="new-task-form">
       <TaskForm/>
     </div>
     <!-- Filter -->
-    <nav class="filter">
-      <button @click="filter = 'all'">All Task</button>
-      <button @click="filter = 'favs'">Fav Task</button>
-      <button @click="taskStore.$reset">Reset</button>
-    </nav>
+<!--    <nav class="filter">-->
+    <!--      <button @click="filter = 'all'">All Task</button>-->
+    <!--      <button @click="filter = 'favs'">Fav Task</button>-->
+    <!--      <button @click="taskStore.$reset">Reset</button>-->
+    <!--    </nav>-->
 
     <!-- Loading...  -->
     <div class="loading" v-show="loading">Loading...</div>
