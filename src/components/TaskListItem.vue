@@ -11,13 +11,13 @@ const taskStore = useTaskStore();
       <i class="material-icons" @click="taskStore.deleteTask(task.id)"
         >delete</i
       >
-      <i
+      <!-- <i
         :class="{ active: task.isFav }"
         class="material-icons"
         @click="taskStore.toggleFav(task.id)"
       >
         favorite
-      </i>
+      </i> -->
     </div>
   </div>
 </template>
