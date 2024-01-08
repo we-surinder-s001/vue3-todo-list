@@ -21,7 +21,7 @@ const handleSubmit = () => {
 <template>
   <form @submit.prevent="handleSubmit">
     <input type="text" placeholder="I need to do.." v-model="newTask" />
-    <button>Add</button>
+    <button>+ Add</button>
   </form>
 </template>
 
