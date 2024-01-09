@@ -3,7 +3,6 @@ import { ref } from "vue";
 import { useTaskStore } from "@/stores/TaskStore";
 import { storeToRefs } from "pinia";
 import { toast } from "vue3-toastify";
-import "vue3-toastify/dist/index.css";
 
 const taskStore = useTaskStore();
 const { tasks } = storeToRefs(taskStore);
