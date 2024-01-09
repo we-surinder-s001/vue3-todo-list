@@ -121,3 +121,7 @@ form input {
   text-align: center;
   margin: 30px auto;
 }
+
+.stricked-text {
+  text-decoration: line-through;
+}
