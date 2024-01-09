@@ -2,19 +2,30 @@
 import { ref } from "vue";
 import { useTaskStore } from "@/stores/TaskStore";
 import { storeToRefs } from "pinia";
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 
-// const { addTask, tasks, countTasks } = storeToRefs(useTaskStore());
 const taskStore = useTaskStore();
+const { tasks } = storeToRefs(taskStore);
 const newTask = ref("");
 
 const handleSubmit = () => {
   if (newTask.value.length > 0) {
-    taskStore.addTask({
-      id: Math.random() * newTask.value.length,
-      title: newTask.value,
-      isFav: false,
+    const res = tasks.value.find(({ title }) => {
+      return newTask.value === title;
     });
-    newTask.value = "";
+
+    if (!res) {
+      taskStore.addTask({
+        id: Math.random() * newTask.value.length,
+        title: newTask.value,
+        isFav: false,
+      });
+      newTask.value = "";
+      toast.success("To do added");
+    } else {
+      toast.warn("To do already added.");
+    }
   }
 };
 </script>
@@ -25,4 +36,4 @@ const handleSubmit = () => {
   </form>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
